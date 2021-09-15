@@ -18,7 +18,8 @@
           "build",
           "lint",
           "test",
-          "e2e"
+          "e2e",
+          "build-storybook"
         ]
       }
     }
@@ -31,5 +32,32 @@
       }
     ]
   },
-  "projects": {}
+  "projects": {
+    "api": {
+      "tags": ["scope:api", "type:app"]
+    },
+    "store": {
+      "tags": ["scope:store", "type:app"]
+    },
+    "store-e2e": {
+      "tags": ["scope:store", "type:e2e"],
+      "implicitDependencies": ["store"]
+    },
+    "store-feature-game-detail": {
+      "tags": ["scope:store", "type:feature"]
+    },
+    "store-ui-shared": {
+      "tags": ["scope:store", "type:ui"]
+    },
+    "store-ui-shared-e2e": {
+      "tags": ["scope:store", "type:e2e"],
+      "implicitDependencies": ["store-ui-shared"]
+    },
+    "store-util-formatters": {
+      "tags": ["scope:store", "type:util"]
+    },
+    "util-interface": {
+      "tags": ["scope:shared", "type:util"]
+    }
+  }
 }
